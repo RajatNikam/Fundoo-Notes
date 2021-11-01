@@ -1,0 +1,29 @@
+<div class="mainBlock">
+    <div fxLayout="row" fxLayoutAlign="space-between" class="title">
+        <input placeholder="Title" [(ngModel)]="title">
+        <button mat-icon-button id="pin"><img src='/assets/pin.svg'></button>
+    </div>
+
+    <br>
+
+    <div class="description">
+        <input [(ngModel)]="description" placeholder="Note">
+    </div>
+
+    <br>
+
+    <div class="card-bottom" id="bottom" fxLayout="row" fxLayoutAlign="space-evenly none">
+        <div class="note-prop">
+            <div class="reminder prop" role="button"></div>
+            <div class="back-img prop" role="button"></div>
+            <div class="back-color prop" role="button"></div>
+            <div class="archive prop" role="button"></div>
+            <div class="more-opn prop" role="button"></div>
+            <div class="undo prop" role="button" disabled></div>
+            <div class="redo prop" role="button"></div>
+        </div>
+
+        <div class="close-note" id="close" (click)=updateNote() >Close</div>
+    </div>
+
+</div>

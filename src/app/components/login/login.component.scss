@@ -1,0 +1,188 @@
+*{
+    list-style-type: none;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    font-family: "Roboto";
+}
+
+.container {
+    width: auto;
+    height: auto;
+    background-color: white;
+    border: black solid 1px;
+    border: 1px solid rgba(000, 0, 0, 0.2);
+    // margin: 20px 20px 20px 20px;
+    padding: 40px 30px 40px 30px;
+    // position: relative;
+    // top: 15vh;
+    // left: 20vw;
+    // right: 30vh;
+    border-radius: 10px;
+}
+
+.email {
+    text-align: center;
+    opacity: 100%;
+}
+
+.container .logo p {
+    font-size: 35px
+}
+
+.container .logo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.container .heading {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.container .heading p {
+    font-size: 18px;
+}
+
+.btn {
+    background-color: white;
+    color: #1a73e8;
+    margin: 0px 0 0px 0px;
+    cursor: pointer;
+    font-size: 15px;
+    padding: 4px 4px 4px 4px;
+    border: none;
+    transition-duration: 0.4s;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background-color: #1a73e8;
+    color: white;
+}
+
+.email mat-hint {
+    font-size: 13px;
+}
+
+.hint mat-hint {
+    position: absolute;
+    margin: 30px 0 0 0px;
+    font-size: 15px;
+}
+
+.btn1 {
+    background-color: white;
+    color: #1a73e8;
+    margin: 80px 0 25px 0px;
+    cursor: pointer;
+    font-size: 15px;
+    padding: 4px 4px 4px 4px;
+    border: none;
+    transition-duration: 0.4s;
+    border-radius: 5px;
+}
+
+.btn1:hover {
+    background-color: #1a73e8;
+    color: white;
+}
+
+.btn2 {
+    background-color: #1a73e8;
+    color: white;
+    margin: 80px 0 25px 175px;
+    cursor: pointer;
+    font-size: 15px;
+    padding: 10px 24px 10px 24px;
+    border: none;
+    transition-duration: 0.4s;
+    border-radius: 5px;
+}
+
+// footer 
+
+.help {
+display: inline;
+justify-content: space-between;
+float: right;
+margin: -230px 690px 0 0;
+}
+
+.help ul {
+    display: inline;
+}
+
+.help ul li {
+    display: inline;
+    
+}
+
+.help ul li a {
+    display: inline;
+    // margin-left: 30px;
+    color: gray;
+    font-size: smaller;
+    font-weight: 500;
+}
+
+// footer 
+
+.btn3 {
+    background-color: white;
+    color: #1a73e8;
+    cursor: pointer;
+    font-size: 15px;
+    padding: 4px 4px 4px 4px;
+    border: none;
+    transition-duration: 0.4s;
+    border-radius: 5px;
+    margin-top: 50px;
+}
+
+@media only screen and (max-width: 599px) {
+    .container {
+        width: 100vw;
+        height: 100vh;
+        // background: lightblue;
+        padding:  10px 10px 10px 10px;
+        border: 1px solid rgba(000, 0, 0, 0.0);
+    }
+
+    .container .logo p {
+        margin-top: 30px;
+        font-size: 27px;
+    }
+
+    .container .inputbox .lastname {
+        margin-top: -18px;
+        margin-left: 0px;
+        font-size: 12px;
+    }
+
+    .container .inputbox .confirm {
+        margin-left: 0px;
+    }
+
+    .container .inputbox {
+        // margin-top: -18px;
+        font-size: 12px;
+    }
+
+    .container .email {
+        font-size: 12px;
+    }
+
+    .hint mat-hint {
+        position: absolute;
+        // text-align: right;
+        // float: right;
+        // margin-left: 200px;
+        // padding-left: 200px;
+        // margin: 70px 0 0px -410px;
+        margin: 70px 0 0px 0px;
+    }
+
+}

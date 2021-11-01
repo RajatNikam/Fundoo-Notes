@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundoo Notes</title>
+
+</head>
+
+<body fxLayoutAlign="center center">
+
+    <div class="container">
+        <form [formGroup]="registerForm" >
+
+
+            <div class="logo">
+                <p style="color: #1a73e8;">F</p>
+                <p style="color: #ea4335;">u</p>
+                <p style="color: #fbbc05;">n</p>
+                <p style="color: #1a73e8;">d</p>
+                <p style="color: #34a853;">o</p>
+                <p style="color: #ea4335;">o</p>
+            </div>
+
+            <div class="heading">
+                <h1>Sign in</h1>
+                <p>Use your Fundoo Account</p>
+            </div>
+
+            <div class="inputbox"  fxLayout="column"
+                fxLayoutAlign="space-evenly stretch">
+
+                <div class="email" fxLayout.lt-sm="column" fxLayoutAlign.lt-sm="space-evenly stretch">
+                    <p>
+                        <mat-form-field appearance="outline" style="width: 100%;">
+                            <mat-label>Email or phone</mat-label>
+                            <input matInput placeholder="" type="text" formControlName="email"
+                                [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                            <mat-hint *ngIf="submitted && f.email.errors" class="invalid-feedback">You can use letters,
+                                numbers & periods <mat-hint *ngIf="f.email.errors.required">Email is required</mat-hint>
+                                <mat-hint *ngIf="f.email.errors.email">Email must be a valid email address</mat-hint>
+                            </mat-hint>
+                        </mat-form-field>
+                    </p>
+                </div>
+
+                <div class="password">
+                    <p>
+                        <mat-form-field appearance="outline" style="width: 100%" type="password">
+                            <mat-label>password</mat-label>
+                            <input matInput placeholder="Enter Password" type="password" formControlName="password"
+                                 [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                            <mat-hint *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                                <mat-hint *ngIf="f.password.errors.required"></mat-hint>
+                                <mat-hint *ngIf="f.password.errors.minlength">Password must be at least 6 characters
+                                </mat-hint>
+                            </mat-hint>
+                        </mat-form-field>
+                    </p>
+                </div>
+
+            </div>
+
+            <button class="btn" routerLink="/forgot-email"> Forgot email?</button>
+
+            <div class="hint">
+                <mat-hint> Not your computer? Use a Private Window to sign in. </mat-hint>
+                <button class="btn3">Learn more</button>
+            </div>
+
+            <div fxLayout.lt-sm="row" fxLayoutAlign.lt-sm="space-between none">
+                <button class="btn1" routerLink="/registration">Create Account</button>
+
+                <button mat-raised-button class="btn2" type="submit" (click)="onSubmit()" >Next</button>
+            </div>
+
+        </form>
+
+    </div>
+
+</body>
+
+<!-- <footer>
+
+    <div class="help">
+        <ul>
+            <li>
+                <a href="#">Help</a>
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+            </li>
+        </ul>
+
+    </div>
+
+
+</footer> -->
+
+</html>

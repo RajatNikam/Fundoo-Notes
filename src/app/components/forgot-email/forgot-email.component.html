@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundoo Notes</title>
+
+</head>
+
+<body fxLayoutAlign="center center">
+
+    <div class="container">
+        <form [formGroup]="registerForm" >
+
+            <div class="logo">
+                <p style="color: #1a73e8;">F</p>
+                <p style="color: #ea4335;">u</p>
+                <p style="color: #fbbc05;">n</p>
+                <p style="color: #1a73e8;">d</p>
+                <p style="color: #34a853;">o</p>
+                <p style="color: #ea4335;">o</p>
+            </div>
+
+            <div class="heading">
+                <h1>Find you email</h1>
+                <p>Enter your phone number or recovery email</p>
+            </div>
+
+            <div class="email" fxLayout.lt-sm="column" fxLayoutAlign.lt-sm="space-evenly stretch">
+                <p>
+                    <mat-form-field appearance="outline" style="width: 100%">
+                        <mat-label>Email or phone</mat-label>
+                        <input matInput placeholder="" type="text" formControlName="email"
+                            [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                        <mat-hint *ngIf="submitted && f.email.errors" class="invalid-feedback">You can use letters,
+                            numbers & periods <mat-hint *ngIf="f.email.errors.required">Email is required</mat-hint>
+                            <mat-hint *ngIf="f.email.errors.email">Email must be a valid email address</mat-hint>
+                        </mat-hint>
+                    </mat-form-field>
+                </p>
+            </div>
+
+            <div fxLayoutAlign="end none">
+                <button mat-raised-button class="btn2" type="submit" (click)="onSubmit()">Next</button>
+            </div>
+
+        </form>
+
+    </div>
+
+</body>
+
+</html>

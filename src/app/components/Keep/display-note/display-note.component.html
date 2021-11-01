@@ -1,0 +1,16 @@
+<div class="note-container" *ngFor="let note of allNotes">
+    <mat-card class="card" style="min-width: 260px;" [style.background]="note.color">
+        <div class="mainBlock" (click)="openDialog(note)" [style.background]="note.color">
+            <div [style.background-color]="colorData">
+                <strong class="title">{{note.title}}</strong>
+            </div>
+
+            <div id="description" #description contenteditable="false" aria-multiline="true" role="textbox"
+                class="font n1" dir="ltr" [style.background-color]="note.color">{{note.description}}</div>
+
+        </div>
+        <div class="icon" [style.background-color]="note.color">
+            <app-icons class="icon" [noteId]="note.id" [noteData]="note"></app-icons>
+        </div>
+    </mat-card>
+</div>

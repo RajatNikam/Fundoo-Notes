@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundoo Notes</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" />
+</head>
+
+<body fxLayout="row" fxLayoutAlign="center center">
+
+    <div class="container">
+
+        <form [formGroup]="registerForm" >
+
+            <div>
+                <div class="logo">
+                    <p style="color: #1a73e8;">F</p>
+                    <p style="color: #ea4335;">u</p>
+                    <p style="color: #fbbc05;">n</p>
+                    <p style="color: #1a73e8;">d</p>
+                    <p style="color: #34a853;">o</p>
+                    <p style="color: #ea4335;">o</p>
+                </div>
+
+                <div class="heading">
+                    <h1>Create your Google Account</h1>
+                </div>
+
+                <div class="inputbox" fxLayout="row" fxLayoutAlign="space-between none" fxLayout.lt-sm="column"
+                    fxLayoutAlign.lt-sm="space-evenly stretch">
+
+                    <div class="firstname">
+                        <p>
+                            <mat-form-field appearance="outline" style="width: 100%">
+                                <mat-label>First Name</mat-label>
+                                <input matInput placeholder="" type="text" formControlName="firstName" 
+                                    [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+                                <mat-hint *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                                    <mat-hint *ngIf="f.firstName.errors.required">Enter first name and surname
+                                    </mat-hint>
+                                </mat-hint>
+                            </mat-form-field>
+                        </p>
+                    </div>
+
+                    <div class="lastname">
+                        <p>
+                            <mat-form-field appearance="outline" style="width: 100%">
+                                <mat-label>Last Name</mat-label>
+                                <input matInput placeholder="" type="text" formControlName="lastName"
+                                    [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+                                <mat-hint *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                                    <mat-hint *ngIf="f.lastName.errors.required"></mat-hint>
+                                </mat-hint>
+                            </mat-form-field>
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="email">
+                    <p>
+                        <mat-form-field appearance="outline" style="width: 100%">
+                            <mat-label>Username</mat-label>
+                            <input matInput placeholder="" type="text" formControlName="email" 
+                                [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                            <mat-hint>You can use letters,
+                                numbers & periods</mat-hint>
+                            <mat-hint *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                                <mat-hint *ngIf="f.email.errors.required">Choose a Gmail address</mat-hint>
+                                <mat-hint *ngIf="f.email.errors.email">Email must be a valid email address</mat-hint>
+                            </mat-hint>
+                        </mat-form-field>
+                    </p>
+                </div>
+
+                <button class="btn"> Use my current email address instead</button>
+
+                <div class="inputbox" fxLayout="row" fxLayoutAlign="space-between stretch" fxLayout.lt-sm="column"
+                    fxLayoutAlign.lt-sm="space-evenly stretch">
+
+                    <div class="password">
+                        <p>
+                            <mat-form-field appearance="outline" style="width: 100%" type="password">
+                                <mat-label>password</mat-label>
+                                <input matInput placeholder="Enter Password" type="password"  formControlName="password" 
+                                     [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                                <mat-hint *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                                    <mat-hint *ngIf="f.password.errors.required"></mat-hint>
+                                    <mat-hint *ngIf="f.password.errors.minlength">Password must be at least 6 characters
+                                    </mat-hint>
+                                </mat-hint>
+                            </mat-form-field>
+                        </p>
+                    </div>
+
+                    <div class="confirm">
+                        <p>
+                            <mat-form-field appearance="outline" style="width: 100%">
+                                <mat-label>confirm</mat-label>
+                                <input matInput placeholder=""  formControlName="confirmPassword">
+                                <mat-hint *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback">
+                                    <mat-hint *ngIf="f.confirmPassword.errors.required">Confirm Password is required
+                                    </mat-hint>
+                                    <mat-hint *ngIf="f.confirmPassword.errors.mustMatch">Passwords must match</mat-hint>
+                                </mat-hint>
+                            </mat-form-field>
+                        </p>
+                    </div>
+
+                    <div class="hint" fxHide.lt-sm>
+                        <mat-hint> Use 8 or more characters with a mix of letters, numbers & <br> symbols
+                        </mat-hint>
+
+                    </div>
+
+                </div>
+
+                <div class="example-section" >
+                    <mat-checkbox class="example-margin">Show password</mat-checkbox>
+                    <!-- <mat-checkbox class="example-margin" [disabled]="true">Disabled</mat-checkbox> -->
+                </div>
+
+                <div fxLayout.lt-sm="row"
+                fxLayoutAlign.lt-sm="space-between none">
+                    <button class="btn1" routerLink="/login">Sign in instead</button>
+
+                    <button mat-raised-button class="btn2" type="submit" (click)="onSubmit()">Next</button>
+                </div>
+
+            </div>
+
+        </form>
+
+
+        <div class="image" fxHide.lt-md>
+            <img src="https://ssl.gstatic.com/accounts/signup/glif/account.svg" alt="404" width="250px" height="250px">
+
+            <div class="content">
+                <p>One account. All of Google <br> working for you. </p>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+<!-- <footer fxLayout="row" fxLayoutAlign="end start" >
+
+    <div class="help">
+        <ul>
+            <li>
+                <a href="#">Help</a>
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+            </li>
+        </ul>
+    </div>
+
+</footer> -->
+
+</html>
