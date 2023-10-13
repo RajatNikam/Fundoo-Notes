@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { FormGroup } from '@angular/forms';
+import { UntypedFormGroup } from '@angular/forms';
 
 import { RegistrationComponent } from './registration.component';
 
@@ -27,7 +27,7 @@ describe('RegistrationComponent', () => {
 
 // custom validator to check that two fields match
 export function MustMatch (controlName: string, matchingControlName: string) {
-  return (formGroup: FormGroup) => {
+  return (formGroup: UntypedFormGroup) => {
     const control = formGroup.controls[controlName];
     const matchingControl = formGroup.controls[matchingControlName];
 
