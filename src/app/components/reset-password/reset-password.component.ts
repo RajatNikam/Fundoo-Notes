@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, FormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { UserService } from 'src/app/services/userService/user.service';
 
 
@@ -9,10 +9,10 @@ import { UserService } from 'src/app/services/userService/user.service';
   styleUrls: ['./reset-password.component.scss']
 })
 export class ResetPasswordComponent implements OnInit {
-  registerForm!: FormGroup;
+  registerForm!: UntypedFormGroup;
   submitted = false;
 
-  constructor(private formBuilder: FormBuilder,  private userService: UserService) { }
+  constructor(private formBuilder: UntypedFormBuilder,  private userService: UserService) { }
 
   ngOnInit(): void {
     this.registerForm = this.formBuilder.group({

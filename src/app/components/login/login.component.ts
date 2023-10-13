@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from '../../../app/services/userService/user.service'
 
@@ -12,11 +12,11 @@ import { UserService } from '../../../app/services/userService/user.service'
 
 
 export class LoginComponent implements OnInit {
-  registerForm!: FormGroup;
+  registerForm!: UntypedFormGroup;
   submitted = false;
   // user = '1'
 
-  constructor(private formBuilder: FormBuilder, private userService: UserService, private router: Router) { }
+  constructor(private formBuilder: UntypedFormBuilder, private userService: UserService, private router: Router) { }
 
   ngOnInit(): void {
 
